@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <title>Aprender para Jogar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Aprender para Jogar">
+      <span class="brand-mark">APJ</span>
+      <span>Aprender para Jogar</span>
+    </a>
+    <nav class="nav">
+      <a href="#inicio">Início</a>
+      <a href="#materias">Matérias</a>
+      <a href="#ranking">Ranking</a>
+    </nav>
+    <div class="xp-pill">⭐ <span id="headerXp">0</span> XP</div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">APRENDER • JOGAR • EVOLUIR</p>
+        <h1>Estude no seu ritmo.<br><span>Ganhe XP jogando.</span></h1>
+        <p class="hero-text">Escolha uma matéria, entre em qualquer nível e responda desafios. Cada atividade concluída aumenta seu XP e sua posição no ranking.</p>
+        <a class="primary-btn" href="#materias">Começar a aprender →</a>
+      </div>
+      <div class="hero-card">
+        <div class="level-badge">NÍVEL ATUAL</div>
+        <div class="big-level" id="heroLevel">1</div>
+        <div class="hero-stat"><span>⚡ XP acumulado</span><strong id="heroXp">0 XP</strong></div>
+        <div class="progress"><span id="heroProgress"></span></div>
+        <small id="heroNext">100 XP para o próximo nível</small>
+      </div>
+    </section>
+
+    <section id="materias" class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">ESCOLHA SEU CAMINHO</p>
+          <h2>Matérias</h2>
+        </div>
+        <p>Você pode começar pelo nível que quiser.</p>
+      </div>
+      <div id="subjectGrid" class="subject-grid"></div>
+    </section>
+
+    <section id="ranking" class="section ranking-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">COMPETE COM SEU PRÓPRIO PROGRESSO</p>
+          <h2>Ranking</h2>
+        </div>
+        <p>Seu XP aparece aqui conforme você completa atividades.</p>
+      </div>
+      <div class="ranking-card">
+        <div class="rank-row rank-head"><span>#</span><span>Jogador</span><span>XP</span></div>
+        <div id="rankingList"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="levelsModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="levelsTitle">
+    <div class="modal-box">
+      <button class="close" id="closeLevels">×</button>
+      <p class="eyebrow" id="levelsSubject"></p>
+      <h2 id="levelsTitle">Escolha um nível</h2>
+      <p>Você não precisa começar pelo básico. Escolha qualquer nível disponível.</p>
+      <div id="levelsGrid" class="levels-grid"></div>
+    </div>
+  </div>
+
+  <div id="quizModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="quizTitle">
+    <div class="modal-box quiz-box">
+      <button class="close" id="closeQuiz">×</button>
+      <div class="quiz-top">
+        <div>
+          <p class="eyebrow" id="quizSubject"></p>
+          <h2 id="quizTitle"></h2>
+        </div>
+        <div class="quiz-xp">+<span id="quizXp">0</span> XP</div>
+      </div>
+      <div class="question-count" id="questionCount"></div>
+      <h3 id="questionText"></h3>
+      <div id="answers" class="answers"></div>
+      <div class="quiz-tip">💡 Escolha uma alternativa e depois clique em Responder.</div>
+      <button id="nextQuestion" class="primary-btn full" disabled>Responder</button>
+      <div id="quizFeedback" class="feedback"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
